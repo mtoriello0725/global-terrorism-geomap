@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>The Artilyzer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+<!--   load static files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="body">
+
+  <br><hr>
+
+  <h1>Hello World</h1>
+
+  <hr><br>
+
+  <div id="geo-plot"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Global Terrorism</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+        <!-- Leaflet JS & CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script>
+
+        <!-- D3 -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+
+        <!-- Marker Cluster JS & CSS -->
+        <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+        <!--   load static files -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body class="body">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Where are Global Attacks?</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">1970s<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/geography/1970">1970</a></li>
+                            <li><a href="/geography/1971">1971</a></li>
+                            <li><a href="/geography/1972">1972</a></li>
+                            <li><a href="/geography/1973">1973</a></li>
+                            <li><a href="/geography/1974">1974</a></li>
+                            <li><a href="/geography/1975">1975</a></li>
+                            <li><a href="/geography/1976">1976</a></li>
+                            <li><a href="/geography/1977">1977</a></li>
+                            <li><a href="/geography/1978">1978</a></li>
+                            <li><a href="/geography/1979">1979</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">1980s<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/geography/1980">1980</a></li>
+                            <li><a href="/geography/1981">1981</a></li>
+                            <li><a href="/geography/1982">1982</a></li>
+                            <li><a href="/geography/1983">1983</a></li>
+                            <li><a href="/geography/1984">1984</a></li>
+                            <li><a href="/geography/1985">1985</a></li>
+                            <li><a href="/geography/1986">1986</a></li>
+                            <li><a href="/geography/1987">1987</a></li>
+                            <li><a href="/geography/1988">1988</a></li>
+                            <li><a href="/geography/1989">1989</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">1990s<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/geography/1990">1990</a></li>
+                            <li><a href="/geography/1991">1991</a></li>
+                            <li><a href="/geography/1992">1992</a></li>
+                            <li><a href="/geography/1993">1993</a></li>
+                            <li><a href="/geography/1994">1994</a></li>
+                            <li><a href="/geography/1995">1995</a></li>
+                            <li><a href="/geography/1996">1996</a></li>
+                            <li><a href="/geography/1997">1997</a></li>
+                            <li><a href="/geography/1998">1998</a></li>
+                            <li><a href="/geography/1999">1999</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">2000s<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/geography/2000">2000</a></li>
+                            <li><a href="/geography/2001">2001</a></li>
+                            <li><a href="/geography/2002">2002</a></li>
+                            <li><a href="/geography/2003">2003</a></li>
+                            <li><a href="/geography/2004">2004</a></li>
+                            <li><a href="/geography/2005">2005</a></li>
+                            <li><a href="/geography/2006">2006</a></li>
+                            <li><a href="/geography/2007">2007</a></li>
+                            <li><a href="/geography/2008">2008</a></li>
+                            <li><a href="/geography/2009">2009</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">2010s<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/geography/2010">2010</a></li>
+                            <li><a href="/geography/2011">2011</a></li>
+                            <li><a href="/geography/2012">2012</a></li>
+                            <li><a href="/geography/2013">2013</a></li>
+                            <li><a href="/geography/2014">2014</a></li>
+                            <li><a href="/geography/2015">2015</a></li>
+                            <li><a href="/geography/2016">2016</a></li>
+                            <li><a href="/geography/2017">2017</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="geoMap"></div>
+
+        <!-- static files -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    </body>
+
+</html>
